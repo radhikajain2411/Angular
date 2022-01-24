@@ -1,0 +1,31 @@
+<title>Form Validation</title>
+<h1 style="text-align: center;color: saddlebrown;background-color: gainsboro;border: slategray;">Form Validation and Details Submission</h1>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
+  <label><b>UserName</b></label><br />
+  <input name="uname" placeholder="Enter Name" type="text" formControlName="uname">
+  <br />
+  <span style="color: red;" *ngIf="uname&&uname.invalid&&uname.touched">This fiels is not valid</span>
+  <br />
+
+  <label><b>Email</b></label><br />
+  <input name="email" placeholder="Enter Email" type="text" formControlName="eMail">
+  <br />
+  <span style="color: red;" *ngIf="eMail&&eMail.invalid&&eMail.touched">This fiels is not valid</span>
+  <br />
+
+  <label><b>Password</b></label><br />
+  <input name="password" placeholder="Enter Password" type="text" formControlName="password">
+  <br />
+  <span style="color: red;" *ngIf="password&&password.invalid&&password.touched">This fiels is not valid</span>
+  <br />
+
+
+  <label><b>Mobile No</b></label><br />
+  <input name="mobile" placeholder="Enter Mobile No." type="text" formControlName="mobile">
+  <br />
+  <span style="color: red;" *ngIf="mobile&&mobile.invalid&&mobile.touched">This fiels is not valid</span>
+  <br />
+
+
+  <button [disabled]="loginForm.invalid">Submit</button>
+</form>
